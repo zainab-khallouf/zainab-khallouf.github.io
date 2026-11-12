@@ -1,77 +1,105 @@
-/* ===== Zainab Khallouf -- academic site (GitHub Pages) =====
-   Colours: edit the variables below. Dark mode follows the visitor's system. */
+/* =====================================================================
+   Zainab Khallouf -- academic site (GitHub Pages)
+   CHANGE THE COLOURS HERE: edit the values in the two blocks below.
+   Light mode = :root.  Dark mode = the @media block (follows the visitor's system).
+   More palettes are listed in README.md.
+   ===================================================================== */
 :root{
-  --accent:#154378; --accent-soft:#eaf0f7; --bg:#ffffff; --text:#1f2933;
-  --muted:#5b6672; --line:#dde3ea; --card:#f7f9fb;
+  --accent:#0f6b66;        /* main colour: titles, links, buttons   */
+  --accent-2:#b4572f;      /* warm second colour: small highlights  */
+  --accent-soft:#e3f1ee;   /* pale tint: tags, hover, photo frame   */
+  --bg:#fbfaf6;            /* page background                       */
+  --card:#f3f1ea;          /* cards                                 */
+  --text:#1f2a2c;          /* body text                             */
+  --muted:#5d6b6e;         /* secondary text                        */
+  --line:#dfdcd2;          /* thin lines                            */
 }
 @media (prefers-color-scheme:dark){
-  :root{--accent:#7fb2ea; --accent-soft:#1c2a3a; --bg:#12171d; --text:#e6ebf0;
-        --muted:#9aa7b4; --line:#2a333d; --card:#182029;}
+  :root{
+    --accent:#6fd3c6; --accent-2:#e59a73; --accent-soft:#17302d;
+    --bg:#111716; --card:#18211f; --text:#e7eeec; --muted:#9db0ac; --line:#2a3633;
+  }
 }
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:4.2rem}
-body{margin:0;font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-     color:var(--text);background:var(--bg)}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+     color:var(--text);background:var(--bg);border-top:5px solid var(--accent)}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.wrap{max-width:860px;margin:0 auto;padding:0 1.25rem}
+.wrap{max-width:880px;margin:0 auto;padding:0 1.25rem}
 
 /* Navigation */
 header.nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
-header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3.4rem;flex-wrap:wrap}
-header.nav .brand{font-weight:700;color:var(--text)}
-header.nav nav{display:flex;flex-wrap:wrap;font-size:.92rem}
-header.nav nav a{margin-right:1rem}
-header.nav nav a{color:var(--muted)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:3.5rem;flex-wrap:wrap}
+header.nav .brand{font-weight:700;color:var(--text);margin-right:1.5rem}
+header.nav nav{display:flex;flex-wrap:wrap;font-size:.95rem}
+header.nav nav a{color:var(--muted);margin-right:1.1rem;padding:.2rem 0;border-bottom:2px solid transparent}
 header.nav nav a:hover{color:var(--accent);text-decoration:none}
+header.nav nav a.active{color:var(--accent);border-bottom-color:var(--accent-2)}
 
-/* Hero */
-.hero{padding:3rem 0 2rem;border-bottom:1px solid var(--line)}
-.hero .wrap{display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
-.hero .text{flex:1 1 360px}
-.hero h1{margin:0 0 .2rem;font-size:2.3rem;line-height:1.15;color:var(--accent)}
+/* Home hero */
+.hero{padding:3rem 0 2.2rem;border-bottom:1px solid var(--line)}
+.hero .wrap{display:flex;align-items:center;flex-wrap:wrap}
+.hero .photo-box{margin-right:2rem;margin-bottom:1rem}
+.hero .text{flex:1 1 340px}
+.hero h1{margin:0 0 .2rem;font-size:2.4rem;line-height:1.15;color:var(--accent)}
 .hero .role{margin:.2rem 0;font-size:1.15rem}
-.hero .affil{margin:0 0 1rem;color:var(--muted)}
-.hero .links{display:flex;flex-wrap:wrap;margin-top:1rem}
-.hero .links .btn{margin:0 .6rem .6rem 0}
-.btn{display:inline-block;border:1px solid var(--accent);border-radius:8px;padding:.35rem .9rem;font-size:.92rem}
-.btn.primary{background:var(--accent);color:var(--bg)}
-.btn.primary:hover{text-decoration:none;opacity:.9}
-.btn:hover{text-decoration:none;background:var(--accent-soft)}
-.photo-box{width:170px;height:210px;flex:0 0 auto;border-radius:12px;overflow:hidden;
+.hero .affil{margin:0;color:var(--muted)}
+.photo-box{width:170px;height:210px;flex:0 0 auto;border-radius:14px;overflow:hidden;
            background:var(--accent-soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
 .photo-box img{width:100%;height:100%;object-fit:cover;display:block}
 .photo-box .initials{display:none;font-size:3rem;font-weight:700;color:var(--accent)}
 
-/* Sections */
-section{padding:2.2rem 0;border-bottom:1px solid var(--line)}
-section:last-of-type{border-bottom:0}
-h2{margin:0 0 1rem;font-size:1.4rem;color:var(--accent);letter-spacing:.01em}
-h3{margin:1.4rem 0 .5rem;font-size:1.05rem}
-p{margin:.5rem 0}
-.tags{display:flex;flex-wrap:wrap;margin:.8rem 0 0;padding:0;list-style:none}
-.tags li{margin:0 .45rem .45rem 0;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:.12rem .75rem;font-size:.88rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.9rem 1.1rem;margin:.8rem 0}
+.btn{display:inline-block;border:1px solid var(--accent);border-radius:8px;padding:.35rem .95rem;font-size:.93rem;margin:.9rem .6rem 0 0}
+.btn.primary{background:var(--accent);color:var(--bg)}
+.btn:hover{text-decoration:none;background:var(--accent-soft)}
+.btn.primary:hover{opacity:.9;background:var(--accent)}
 
-/* Timeline entries */
-.entry{display:grid;grid-template-columns:9.5rem 1fr;gap:.2rem 1.2rem;padding:.55rem 0}
-.entry .when{color:var(--muted);font-size:.9rem}
-.entry .what strong{display:block}
-.entry .what span{color:var(--muted);font-size:.95rem}
-@media(max-width:620px){.entry{grid-template-columns:1fr}}
+/* Page title (inner pages) */
+.page-title{padding:2.4rem 0 1.2rem;border-bottom:1px solid var(--line)}
+.page-title h1{margin:0;font-size:2rem;color:var(--accent)}
+.page-title p{margin:.4rem 0 0;color:var(--muted)}
+
+/* Sections */
+section{padding:2rem 0}
+h2{margin:0 0 .8rem;font-size:1.35rem;color:var(--accent)}
+h3{margin:1.4rem 0 .5rem;font-size:1.05rem}
+p{margin:.55rem 0}
+.tags{display:flex;flex-wrap:wrap;margin:.8rem 0 0;padding:0;list-style:none}
+.tags li{margin:0 .45rem .45rem 0;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:.12rem .8rem;font-size:.88rem}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent-2);border-radius:10px;padding:.9rem 1.15rem;margin:.9rem 0}
+.small{font-size:.9rem;color:var(--muted)}
+
+/* Home: links to the other pages */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));grid-gap:1rem}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.15rem;color:var(--text)}
+.tile:hover{text-decoration:none;border-color:var(--accent)}
+.tile strong{display:block;color:var(--accent);font-size:1.05rem;margin-bottom:.2rem}
+.tile span{color:var(--muted);font-size:.93rem}
+.grid .card{margin:0}
+.grid h3{margin-top:0}
+.grid ul{margin:.3rem 0 0;padding-left:1.1rem;font-size:.96rem}
 
 /* Publications */
 ol.pubs{list-style:none;margin:0;padding:0}
-ol.pubs li{padding:.7rem 0;border-bottom:1px dashed var(--line)}
+ol.pubs li{padding:.75rem 0;border-bottom:1px dashed var(--line)}
 ol.pubs .kind{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
-              background:var(--accent-soft);color:var(--accent);border-radius:4px;padding:.05rem .45rem;margin-right:.4rem}
+              background:var(--accent-soft);color:var(--accent);border-radius:4px;padding:.05rem .45rem;margin-right:.45rem}
 ol.pubs .venue{color:var(--muted);font-size:.95rem}
 
-/* Teaching grid */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.9rem}
-.grid .card{margin:0}
-.grid h3{margin-top:0}
-.grid ul{margin:.3rem 0 0;padding-left:1.1rem;font-size:.95rem}
-.small{font-size:.9rem;color:var(--muted)}
+/* Course resources */
+ul.res{list-style:none;margin:.3rem 0 0;padding:0;font-size:.96rem}
+ul.res li{padding:.25rem 0;border-bottom:1px dashed var(--line)}
+ul.res li:last-child{border-bottom:0}
+ul.res li.empty{color:var(--muted);font-style:italic}
 
-footer{padding:1.6rem 0 2.4rem;color:var(--muted);font-size:.88rem;text-align:center}
+/* Art gallery */
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));grid-gap:1.2rem}
+.work{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.work .ph img{width:100%;display:block}
+.work figcaption{padding:.8rem 1rem}
+.work figcaption strong{display:block}
+.work figcaption span{color:var(--muted);font-size:.92rem}
+
+footer{padding:1.8rem 0 2.6rem;color:var(--muted);font-size:.9rem;text-align:center;border-top:1px solid var(--line)}
